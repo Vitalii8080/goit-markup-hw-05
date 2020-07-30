@@ -14,9 +14,12 @@
   }
 body {
      
-    font-family: Roboto;
+    font-family: "Roboto", "Verdana","Tahoma",sans-serif;
     background: #E5E5E5;
     color :black;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    line-height: 1.1;
     margin: 0;
     padding: 0;
     
@@ -136,18 +139,36 @@ img {
 .site-nav-item:last-child {
     margin-right: 0px;
 }
-.link-1 {
-    width: 50px;
-    height: 16px;
-}
-.link-2 {
-    width: 77px;
-    height: 16px;
-}
-.link-3 {
-    width: 68px;
-    height: 16px;
-}
+.nav-link {
+    position: relative;
+    display: inline-flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    color: var(--title-text-color);
+    font-weight: 500;
+    transition: color 250ms var(--timing-function);
+  }
+  .nav-link:hover,
+  .nav-link:focus,
+  .current {
+    color: var(--accent-color);
+    outline: none;
+  }
+  .current::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+  
+    opacity: 1;
+  }
+  
+
 .site-nav-contacts-item:not(:last-child) {
  margin-right: 30px;
 }
@@ -166,11 +187,7 @@ img {
     color: #757575;
 
 }
-.e-mail {
-    display: inline-flex
-    height: 16px;
-    
-}
+
 .e-mail::before {
     content: "";
     width: 16px;
@@ -179,6 +196,9 @@ img {
     margin-right: 10px;
     background-image: url('../images/logo/envelope-1.svg');
     
+}
+.e-mail::before:hover {
+  background-color: #18a0fb;
 }
 
 .tel {
@@ -302,11 +322,15 @@ img {
 
 
   
-/* what-we-do-sections  */
+/* Чем мы занимаемся  */
 
 
 
 .what-we-do .title {
+    position: absolute;
+    width: 370px;
+    bottom: 0;
+    right: 0;
     padding-top: 27px;
     padding-bottom: 27px;
     margin-top: 0px;
@@ -320,6 +344,9 @@ img {
     padding-left: 0px;
     display: flex;
     align-items: center;
+  }
+  .what-we-do .item {
+    position: relative;
   }
   .what-we-do .item + .item {
     margin-left: 30px;
@@ -386,6 +413,7 @@ img {
 .background-social-network:focus {
   background-color: #FFFFFF;
   background-color: var(--accent-color);
+  outline: none;
 }
 
 .profession {
@@ -434,6 +462,8 @@ img {
 }
 
 /* footer */
+
+
 .address-phone-join {
     display: flex;
     align-items: center;
@@ -565,101 +595,107 @@ img {
 
 
 /* portfolio-section */
-.portfolio-section {
-    
-    padding-top: 94px;
-    padding-bottom: 94px;
-    margin: 0 auto;
-    background-color: #FFFFFF;
-}
-.port-content {
-    width: 1200px;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin: 0 auto;
-}
-.filters-button {
-    
-    height: 54px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 34px;
-    
 
-}
-.filter-1, .filter-2,
- .filter-3, .filter-3,
- .filter-4, .filter-5 {
-    height: 38px;
-    margin-right: 8px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0.03em;
-    color: #212121;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-    background: #F5F4FA;
-    
-}
-.filter-1:hover,
-.filter-2:hover,
-.filter-3:hover,
-.filter-4:hover,
-.filter-5:hover {
-    background: #2196F3;
-    color: #FFFFFF;
+.main-section {
+  padding-top: 93px;
 }
 
 
+.filters {
+  display: flex;
+  justify-content: center;
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.filters .item + .item {
+  margin-left: 8px;
+}
+.works-list {
+  padding-top: 50px;
+  padding-bottom: 94px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}
 
 
+.title-product {
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
 
-.project {
-    
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding-left: 0;
+.flex-element.flex-element:nth-child(3n) {
+  margin-right: 0px;
 }
-.project-item {
-    width: 370px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    background: #FFFFFF;
-    border: 1px solid #EEEEEE;
-    box-sizing: border-box;
-    border-radius: 5px;
-    
-}
-.project-item:nth-child(3n) {
-   margin-right: 0;
-}
-.card-image {
-    display: block;
-}
-.title {
-    
-    margin-top: 20px;
-    margin-bottom: 4px;
-    padding-left: 24px;
-    padding-right: 24px;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 36px;
-    color: #212121;
-}
-.text {
-    width: 322px;
-    height: 30px;
-    margin: 0;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin-bottom: 20px;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.03em;
-    color: #757575;
 
+
+.works-list .title {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  color: var(--title-text-color);
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  line-height: 2;
+}
+.works-list .product {
+  padding-left: 24px;
+  margin-right: 24px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+.overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.works-description {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 63px;
+  padding-bottom: 63px;
+  height: 294px;
+  display: block;
+  transform: translateY(100%);
+  transition: transform 250ms var(--timing-function);
+  color: var(--primary-white-color);
+  font-size: 18px;
+  line-height: 1.5;
+  background: rgba(33, 150, 243, 0.9);
+}
+.flex-element .link:hover .works-description,
+.flex-element .link:focus .works-description {
+  transform: translateY(0);
+  outline: none;
+}
+
+.flex-element {
+  width: 370px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.flex-element .link {
+  display: block;
+}
+.flex-element .link:hover,
+.flex-element .link:focus {
+  outline: none;
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 250ms var(--timing-function);
 }
 
